@@ -3,6 +3,8 @@ import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import Header from './components/Header';
 import Background from './components/Background';
 import Body from './components/Body';
+import CurrentInfo from './components/CurrentInfo';
+
 import DionysosTheme from './styles/DionysosTheme';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +25,7 @@ function App() {
           <Body />
         </Grid>
       </Background>
+      <CurrentInfo />
     </ThemeProvider>
   );
 }
