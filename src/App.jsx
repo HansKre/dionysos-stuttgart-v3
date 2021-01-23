@@ -5,6 +5,7 @@ import Background from './components/Background';
 import Body from './components/Body';
 import CurrentInfo from './components/CurrentInfo';
 import OpeningTimes from './components/OpeningTimes';
+import Reservieren from './components/Reservieren';
 
 import DionysosTheme from './styles/DionysosTheme';
 
@@ -28,6 +29,7 @@ function App() {
       </Background>
       <CurrentInfo />
       <OpeningTimes />
+      <Reservieren />
     </ThemeProvider>
   );
 }
