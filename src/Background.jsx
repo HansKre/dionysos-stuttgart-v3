@@ -5,7 +5,10 @@ import Image from './img/AdobeStock_304469260.jpg'; // Import using relative pat
 
 const useStyles = makeStyles((theme) => ({
     paperWithBackground: {
-        backgroundImage: `url(${Image})`
+        backgroundImage: `url(${Image})`,
+        backgroundSize: 'cover',
+        minHeight: '100vh',
+        maxWidth: '100vw'
     }
 }));
 
