@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import MediaCard from './MediaCard';
 import { nanoid } from 'nanoid';
-import OlivesBackground from './OlivesBackground';
 
 import leaf1 from '../img/leaf1.png';
 import leaf2 from '../img/leaf2.png';
@@ -32,7 +31,6 @@ const CurrentInfo = () => {
 
   return (
     <Grid className={classes.background} container alignItems='center' justify='center'>
-      {/* <OlivesBackground /> */}
       <Typographie color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typographie>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;
