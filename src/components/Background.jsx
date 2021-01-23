@@ -1,7 +1,7 @@
 import { Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import Image from './img/AdobeStock_304469260.jpg'; // Import using relative path
+import Image from '../img/AdobeStock_304469260.jpg'; // Import using relative path
 
 const useStyles = makeStyles((theme) => ({
     paperWithBackground: {

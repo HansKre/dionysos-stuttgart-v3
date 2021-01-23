@@ -1,9 +1,9 @@
 import { Grid } from '@material-ui/core';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
-import Header from './Header';
-import Background from './Background';
+import Header from './components/Header';
+import Background from './components/Background';
+import Body from './components/Body';
 import DionysosTheme from './styles/DionysosTheme';
-import Body from './Body';
 
 const useStyles = makeStyles((theme) => ({
   root: {
