@@ -28,7 +28,7 @@ export default function Header() {
     const classes = useStyles();
 
     return (
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
                 <Grid container >
                     <Grid item xs={4}>
