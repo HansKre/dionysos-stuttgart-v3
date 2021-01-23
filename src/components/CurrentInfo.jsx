@@ -3,6 +3,12 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import MediaCard from './MediaCard';
 import { nanoid } from 'nanoid';
+import OlivesBackground from './OlivesBackground';
+
+import leaf1 from '../img/leaf1.png';
+import leaf2 from '../img/leaf2.png';
+import leaf3 from '../img/leaf3.png';
+import leaf4 from '../img/leaf4.png';
 
 import { data } from '../data/currentInfo';
 
@@ -12,13 +18,21 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5)
   },
+  background: {
+    backgroundImage: `url(${leaf1}), url(${leaf2}), url(${leaf3}), url(${leaf4})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '200px 200px',
+    backgroundPosition: 'top 40px left -70px, bottom 200px left -57px, top -10px right -40px,bottom 10px right -40px'
+    // TODO let leafes overflow into page above
+  }
 }));
 const CurrentInfo = () => {
 
   const classes = useStyles();
 
   return (
-    <Grid container alignItems='center' justify='center'>
+    <Grid className={classes.background} container alignItems='center' justify='center'>
+      {/* <OlivesBackground /> */}
       <Typographie color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typographie>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;
