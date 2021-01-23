@@ -22,16 +22,16 @@ function App() {
 
   return (
     <ThemeProvider theme={DionysosTheme} >
+      <Header />
       <Background>
         <Grid container direction='column' className={classes.root}>
-          <Header />
           <Body />
         </Grid>
       </Background>
       <CurrentInfo />
-      <OpeningTimes />
+      {/* <OpeningTimes />
       <Reservieren />
-      <Anfahrt />
+      <Anfahrt /> */}
     </ThemeProvider>
   );
 }

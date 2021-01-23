@@ -1,10 +1,17 @@
 export const data = [
     {
-        header: 'wichtig',
-        message: 'Ihr Restaurant Dionysos ist am Pfingstmontag geöffnet <br>von 11:30 bis 14:30 <br>und 17:30 bis 23:00. <br><br>Küche jeweils bis 14:00 und 22:00 <br><br>Wir freuen uns auf Ihren Besuch.'
+        header: 'Update',
+        date: '12.12.2020',
+        message: 'Denken Sie an die Sperrstunde - ab heute gelten angepasste Öffnungszeiten!',
     },
     {
-        header: 'In Zeiten von Coronavirus <br> Update - 18.05.2020 Wir fahren wieder Hoch',
-        message: 'Ab Dienstag den 19. Mai 2020 sind unsere Türen wieder geöffnet! Natürlich unter strengen Vorlagen, daher bitten wir Sie vor Ihrem Besuch die entsprechenden Hinweise zu beachten. Unser Abholservice läuft selbstverständlich, parallel weiter. Unsere Mittwochsaktion wird leider bis auf Weiteres nicht mehr angeboten, wir bitten um Verständnis. Es gelten die früheren Öffnungszeiten. Wir freuen Sie alle wieder begrüßen zu dürfen und bedanken uns nochmal herzlichst für Ihre Unterstützung während der Coronakrise. <br> Ihre Familie Alexandris'
+        header: 'Abholdienst im Dezember 2020',
+        date: '02.11.2020',
+        message: 'Ab Dienstag den 03. November 2020 und solange die Schließung der Gastronomie andauert, bieten wir weiterhin unseren Abholservice an, wie zuvor. Dabei gelten abweichende Öffnungszeiten (siehe weiter unten). Wir freuen auf Ihre Bestellungen. Bleiben Sie gesund. Ihre Familie Alexandris',
     },
+    {
+        header: 'Abweichende Öffnungszeiten während der Weihnachtszeit 2020 (Abholdienst)',
+        date: '01.11.2020',
+        message: 'D0 24/12: Geschlossen (keine Vorbestellungen möglich) <br>FR 25/12: 1200 bis 2100 Uhr<br>SA 26/12: 1200 bis 2100 Uhr<br>DO 31/12: 1300 bis 2000 Uhr<br>FR 01/01: 1300 bis 2000 Uhr<br>MI 06/01: 1200 bis 2000 Uhr<br><br>An allen restlichen Tagen gelten die normale Öffnungszeiten.<br>Ab sofort nehmen wir gerne auch Vorbestellungen für die Feiertage an.<br>Wir wünschen unseren Gästen, trotz der ungewöhnlichen Verhältnissen, ein gesegnetes Weihnachtsfest und ein gesundes neues Jahr!',
+    }
 ];

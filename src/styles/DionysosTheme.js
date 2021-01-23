@@ -8,7 +8,6 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
  */
 // TODO: set default colors on Typography variants? e.g. h1=main
 const DionysosTheme = createMuiTheme({
-    // TODO button background: '#4B8936',
     palette: {
         primary: {
             main: '#09557E',
@@ -17,7 +16,7 @@ const DionysosTheme = createMuiTheme({
             main: '#E4A355',
         },
         text: {
-            primary: '#0AOEOF',
+            primary: '#0A0E0F',
             secondary: '#FFFFFF'
         },
         background: {

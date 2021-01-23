@@ -1,24 +1,32 @@
+import Typographie from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/styles';
+import MediaCard from './MediaCard';
+import { nanoid } from 'nanoid';
+
 import { data } from '../data/currentInfo';
 
+const useStyles = makeStyles((theme) => ({
+  title: {
+    alignSelf: 'center',
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(5)
+  },
+}));
 const CurrentInfo = () => {
 
+  const classes = useStyles();
+
   return (
-    <>
-      <h1>Aktuelle Informatioinen</h1>
-      <p>Hier bekommen Sie aktuelle Informationen</p>
-      {
-        data && data.map((entry, index) => {
-          return (
-            <div key={index + 'jumbotron'}>
-              <h3 key={index}
-                dangerouslySetInnerHTML={{ __html: entry.header }} />
-              <p key={(index + 1) * 100}
-                dangerouslySetInnerHTML={{ __html: entry.message }} />
-            </div>
-          )
-        })
-      }
-    </>
+    <Grid container alignItems='center' justify='center'>
+      <Typographie color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typographie>
+      {data && data.map((entry, index) => {
+        const isOdd = index % 2 !== 0;
+        return (
+          <MediaCard key={nanoid()} {...entry} index={index} imgFirst={isOdd} />
+        )
+      })}
+    </Grid>
   )
 }
 
