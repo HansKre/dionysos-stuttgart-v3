@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage';
 import CurrentInfo from './pages/CurrentInfo';
 import OpeningTimes from './pages/OpeningTimes';
 import Anfahrt from './pages/Anfahrt';
+import Speisekarte from './pages/Speisekarte';
 
 import DionysosTheme from './styles/DionysosTheme';
 
@@ -30,6 +31,7 @@ function App() {
       <CurrentInfo />
       <OpeningTimes />
       <Anfahrt />
+      <Speisekarte />
     </ThemeProvider>
   );
 }
