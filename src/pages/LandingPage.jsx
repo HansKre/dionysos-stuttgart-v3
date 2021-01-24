@@ -36,9 +36,10 @@ export default function LandingPage() {
         <Grid id='top' container justify='center' alignItems='center' className={classes.grow} >
             <Paper className={classes.paper} elevation={0} >
                 <Grid item container direction='column' justify='center' alignItems='center' className={classes.grow} >
+                    <Typography color='primary' variant='h6'>Restaurant</Typography>
                     <Typography color='primary' variant='h1'>DIONYSOS</Typography>
-                    <Typography color='primary' variant='h6'>AN AUTHENTIC GREEK RESTRAURANT</Typography>
-                    <ColorButton variant='contained' className={classes.button} >BOOK YOUR TABLE</ColorButton>
+                    <Typography color='primary' variant='h6'>Griechische Spezialitäten</Typography>
+                    <ColorButton variant='contained' className={classes.button} onClick={() => alert('Coming soon...')} >Online bestellen</ColorButton>
                 </Grid>
             </Paper>
         </Grid>
