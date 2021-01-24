@@ -7,6 +7,8 @@ import CurrentInfo from './pages/CurrentInfo';
 import OpeningTimes from './pages/OpeningTimes';
 import Anfahrt from './pages/Anfahrt';
 import Speisekarte from './pages/Speisekarte';
+import Footer from './components/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
 import DionysosTheme from './styles/DionysosTheme';
 
@@ -22,16 +24,19 @@ function App() {
 
   return (
     <ThemeProvider theme={DionysosTheme} >
-      <Header />
-      <Background>
-        <Grid container direction='column' className={classes.root}>
-          <LandingPage />
-        </Grid>
-      </Background>
-      <CurrentInfo />
-      <OpeningTimes />
-      <Anfahrt />
-      <Speisekarte />
+      <BrowserRouter>
+        <Header />
+        <Background>
+          <Grid container direction='column' className={classes.root}>
+            <LandingPage />
+          </Grid>
+        </Background>
+        <CurrentInfo />
+        <OpeningTimes />
+        <Anfahrt />
+        <Speisekarte />
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

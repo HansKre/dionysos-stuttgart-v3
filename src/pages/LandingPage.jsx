@@ -33,7 +33,7 @@ export default function LandingPage() {
     const classes = useStyles();
     // TODO improve shape https://css-tricks.com/the-shapes-of-css/
     return (
-        <Grid container justify='center' alignItems='center' className={classes.grow} >
+        <Grid id='top' container justify='center' alignItems='center' className={classes.grow} >
             <Paper className={classes.paper} elevation={0} >
                 <Grid item container direction='column' justify='center' alignItems='center' className={classes.grow} >
                     <Typography color='primary' variant='h1'>DIONYSOS</Typography>

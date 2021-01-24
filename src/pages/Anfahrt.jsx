@@ -34,7 +34,7 @@ const Anfahrt = () => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.background} direction='column' container alignItems='center' justify='center'>
+    <Grid id='anfahrt' className={classes.background} direction='column' container alignItems='center' justify='center'>
       <Typography color='textPrimary' variant='h3' className={classes.title}>Anfahrt</Typography>
       <AnfahrtCard {...data} />
     </Grid>

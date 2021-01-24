@@ -30,7 +30,7 @@ const CurrentInfo = () => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.background} container alignItems='center' justify='center'>
+    <Grid id='currentinfo' className={classes.background} container alignItems='center' justify='center'>
       <Typography color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typography>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;

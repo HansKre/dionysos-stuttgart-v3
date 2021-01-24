@@ -30,7 +30,7 @@ const OpeningTimes = () => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.background} container alignItems='center' justify='center'>
+    <Grid id='openingtimes' className={classes.background} container alignItems='center' justify='center'>
       <Typography color='textPrimary' variant='h3' className={classes.title}>Öffnungszeiten & Kontakt</Typography>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;
