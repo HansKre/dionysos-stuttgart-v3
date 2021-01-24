@@ -1,0 +1,12 @@
+[[redirects]]
+# index.html
+  from = "/index.html"
+  to = "/"
+  status = 301      # (default): Permanent redirect
+  force = true
+
+# no hit
+  from = "/*"
+  to = "/"
+  status = 301      # (default): Permanent redirect
+  force = false     # redirect only if actual ressource does not exist
