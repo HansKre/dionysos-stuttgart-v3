@@ -28,7 +28,7 @@ const ColorButton = withStyles((theme) => ({
     },
 }))(Button);
 
-export default function Body() {
+export default function LandingPage() {
 
     const classes = useStyles();
     // TODO improve shape https://css-tricks.com/the-shapes-of-css/

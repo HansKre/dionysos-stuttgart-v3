@@ -1,7 +1,7 @@
 import Typographie from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
-import MediaCard from './MediaCard';
+import MediaCard from '../components/MediaCard';
 import { nanoid } from 'nanoid';
 
 import leaf1 from '../img/leaf1.png';
