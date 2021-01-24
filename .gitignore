@@ -23,16 +23,3 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
-
-# not used
-logo.png
-logo_cropped.png
-greek-design/leaf1.png
-greek-design/leaf2.png
-greek-design/leaf3.png
-greek-design/leaf4.png
-src/components/MealCategory.jsx
-src/components/Speisekarte.jsx
-src/data/speisekarte.js
-OlivesBackground.jsx
-OpeningTimes.jsx
