@@ -5,6 +5,7 @@ import Background from './components/Background';
 import LandingPage from './pages/LandingPage';
 import CurrentInfo from './pages/CurrentInfo';
 import OpeningTimes from './pages/OpeningTimes';
+import Anfahrt from './pages/Anfahrt';
 
 import DionysosTheme from './styles/DionysosTheme';
 
@@ -28,6 +29,7 @@ function App() {
       </Background>
       <CurrentInfo />
       <OpeningTimes />
+      <Anfahrt />
     </ThemeProvider>
   );
 }
