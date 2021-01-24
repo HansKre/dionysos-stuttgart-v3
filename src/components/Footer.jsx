@@ -2,6 +2,11 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
+import smoothscroll from 'smoothscroll-polyfill';
+
+// safari does not support smooth scrolling natively
+// kick off the polyfill
+smoothscroll.polyfill();
 
 const useStyles = makeStyles((theme) => ({
     root: {
