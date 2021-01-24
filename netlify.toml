@@ -15,4 +15,7 @@
   from = "/*"
   to = "/"
   status = 301      # (default): Permanent redirect
-  force = false     # redirect only if actual ressource does not exist
+  force = true     # redirect only if actual ressource does not exist
+
+# very good example
+# https://docs.netlify.com/configure-builds/file-based-configuration/
