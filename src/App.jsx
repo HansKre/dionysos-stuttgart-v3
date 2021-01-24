@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Background from './components/Background';
 import LandingPage from './pages/LandingPage';
 import CurrentInfo from './pages/CurrentInfo';
+import OpeningTimes from './pages/OpeningTimes';
 
 import DionysosTheme from './styles/DionysosTheme';
 
@@ -26,6 +27,7 @@ function App() {
         </Grid>
       </Background>
       <CurrentInfo />
+      <OpeningTimes />
     </ThemeProvider>
   );
 }
