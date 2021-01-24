@@ -1,4 +1,4 @@
-import Typographie from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import MediaCard from '../components/MediaCard';
@@ -31,7 +31,7 @@ const CurrentInfo = () => {
 
   return (
     <Grid className={classes.background} container alignItems='center' justify='center'>
-      <Typographie color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typographie>
+      <Typography color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typography>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;
         return (

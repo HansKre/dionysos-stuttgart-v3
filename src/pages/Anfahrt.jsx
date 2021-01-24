@@ -1,4 +1,4 @@
-import Typographie from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import AnfahrtCard from '../components/AnfahrtCard';
@@ -35,7 +35,7 @@ const Anfahrt = () => {
 
   return (
     <Grid className={classes.background} direction='column' container alignItems='center' justify='center'>
-      <Typographie color='textPrimary' variant='h3' className={classes.title}>Anfahrt</Typographie>
+      <Typography color='textPrimary' variant='h3' className={classes.title}>Anfahrt</Typography>
       <AnfahrtCard {...data} />
     </Grid>
   )
