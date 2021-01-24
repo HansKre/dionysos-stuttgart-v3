@@ -11,6 +11,10 @@ const Routes = () => {
             <Route path="/impressum">
                 <Impressum />
             </Route>
+            {/* No Match (404) */}
+            <Route path="*">
+                <Main />
+            </Route>
         </Switch>
     )
 }
