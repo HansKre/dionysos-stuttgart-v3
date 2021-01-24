@@ -8,8 +8,9 @@
   from = "/index.html"
   to = "/"
   status = 301      # (default): Permanent redirect
-  force = true
+  force = true      # redirect even if matching file found
 
+[[redirects]]
 # no hit
   from = "/*"
   to = "/"
