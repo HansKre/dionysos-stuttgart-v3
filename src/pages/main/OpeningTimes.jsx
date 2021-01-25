@@ -1,15 +1,15 @@
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
-import MediaCard from '../components/MediaCard';
+import MediaCard from '../../components/MediaCard';
 import { nanoid } from 'nanoid';
 
-import leaf1 from '../img/leaf1.png';
-import leaf2 from '../img/leaf2.png';
-import leaf3 from '../img/leaf3.png';
-import leaf4 from '../img/leaf4.png';
+import leaf1 from '../../img/leaf1.png';
+import leaf2 from '../../img/leaf2.png';
+import leaf3 from '../../img/leaf3.png';
+import leaf4 from '../../img/leaf4.png';
 
-import { data } from '../data/currentInfo';
+import { data } from '../../data/openingTimes';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) => ({
     // TODO let leafes overflow into page above
   }
 }));
-const CurrentInfo = () => {
+const OpeningTimes = () => {
 
   const classes = useStyles();
 
   return (
-    <Grid id='currentinfo' className={classes.background} container alignItems='center' justify='center'>
-      <Typography color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typography>
+    <Grid id='openingtimes' className={classes.background} container alignItems='center' justify='center'>
+      <Typography color='textPrimary' variant='h3' className={classes.title}>Öffnungszeiten & Kontakt</Typography>
       {data && data.map((entry, index) => {
         const isOdd = index % 2 !== 0;
         return (
@@ -42,4 +42,4 @@ const CurrentInfo = () => {
   )
 }
 
-export default CurrentInfo;
+export default OpeningTimes;

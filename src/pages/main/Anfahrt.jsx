@@ -1,12 +1,12 @@
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
-import AnfahrtCard from '../components/AnfahrtCard';
+import AnfahrtCard from './anfahrt/AnfahrtCard';
 
-import leaf1 from '../img/leaf1.png';
-import leaf2 from '../img/leaf2.png';
-import leaf3 from '../img/leaf3.png';
-import leaf4 from '../img/leaf4.png';
+import leaf1 from '../../img/leaf1.png';
+import leaf2 from '../../img/leaf2.png';
+import leaf3 from '../../img/leaf3.png';
+import leaf4 from '../../img/leaf4.png';
 
 const useStyles = makeStyles((theme) => ({
   title: {

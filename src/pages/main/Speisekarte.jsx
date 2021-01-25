@@ -8,14 +8,14 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import { nanoid } from 'nanoid';
 
-import MealCategory from '../components/MealCategory';
+import MealCategory from './speisekarte/MealCategory';
 
-import leaf1 from '../img/leaf1.png';
-import leaf2 from '../img/leaf2.png';
-import leaf3 from '../img/leaf3.png';
-import leaf4 from '../img/leaf4.png';
+import leaf1 from '../../img/leaf1.png';
+import leaf2 from '../../img/leaf2.png';
+import leaf3 from '../../img/leaf3.png';
+import leaf4 from '../../img/leaf4.png';
 
-import { data } from '../data/speisekarte';
+import { data } from '../../data/speisekarte';
 
 const useStyles = makeStyles((theme) => ({
   root: {
