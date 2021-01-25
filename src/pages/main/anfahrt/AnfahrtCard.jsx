@@ -21,24 +21,17 @@ const useStyles = makeStyles((theme) => ({
         },
         marginBottom: theme.spacing(5),
     },
-    textContainer: {
+    gridText: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center', /* x-direction */
+    },
+    cardContentText: {
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center', /* x-direction */
         justifyContent: 'space-between', /* y-direction */
-        // flex: 1 /* don't flex this to allow map use up all available free space */
-    },
-    iframeCard: {
-        flex: 1,
-        paddingTop: 0
-    },
-    iframe: {
-        border: 0,
-        width: '100%',
-        minHeight: '40vh'
-    },
-    containerContent: {
-        // flex: '1 1 auto', /* don't grow container to allow centering
     },
     message: {
         [theme.breakpoints.up('sm')]: {
@@ -46,11 +39,24 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: theme.spacing(5),
         },
     },
+    cardContentIframe: {
+        [theme.breakpoints.down('xs')]: {
+            paddingTop: 0
+        }
+    },
+    iframe: {
+        border: 0,
+        width: '100%',
+        minHeight: '40vh'
+    },
     grow: {
         flex: '1 0 auto'
     },
     bold: {
         fontWeight: 700
+    },
+    button: {
+        marginBottom: '3px' /* align with iframe; for some reason, i-frame is a little bit higher else */
     }
 }));
 
@@ -70,6 +76,7 @@ export default function AnfahrtCard({ header, message }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 fullWidth
+                className={classes.button}
             >
                 <Typography color='textSecondary' variant="h6">Route berechnen</Typography>
             </Button>
@@ -79,21 +86,19 @@ export default function AnfahrtCard({ header, message }) {
     return (
         <Card className={classes.root}>
             <Grid container>
-                <Grid item xs={12} sm={6}>
-                    <div className={classes.textContainer}>
-                        <CardContent className={classes.containerContent}>
-                            <Typography component="h5" variant="h6" className={classes.bold}>
-                                {header}
-                            </Typography>
-                            <Typography variant="subtitle2" color="textPrimary"
-                                className={classes.message}
-                                dangerouslySetInnerHTML={{ __html: message }}
-                            ></Typography>
-                            {largerThanSm && routeButton()}
-                        </CardContent>
-                    </div>
+                <Grid item xs={12} md={6} className={classes.gridText}>
+                    <CardContent className={classes.cardContentText}>
+                        <Typography component="h5" variant="h6" className={classes.bold}>
+                            {header}
+                        </Typography>
+                        <Typography variant="subtitle2" color="textPrimary"
+                            className={classes.message}
+                            dangerouslySetInnerHTML={{ __html: message }}
+                        ></Typography>
+                        {largerThanSm && routeButton()}
+                    </CardContent>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} md={6}>
                     <CardContent className={classes.iframeCard} >
                         <iframe className={classes.iframe}
                             title='anfahrtGoogleMaps'
