@@ -35,7 +35,10 @@ const useStyles = makeStyles((theme) => ({
     },
     message: {
         marginTop: theme.spacing(5),
-    }
+    },
+    bold: {
+        fontWeight: 700
+    },
 }));
 
 const images = [
@@ -58,7 +61,7 @@ export default function MediaCard({ header, date, message, index, imgFirst }) {
             {imgFirst && theImg()}
             <div className={classes.textContainer}>
                 <CardContent className={classes.containerContent}>
-                    <Typography component="h5" variant="h6">
+                    <Typography component="h5" variant="h6" className={classes.bold} >
                         {header}
                     </Typography>
                     <Typography variant="subtitle1" color="secondary">
