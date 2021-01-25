@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: '200px 200px',
     // leafe positions different than on OpeningTimes and CurrentInfo
-    backgroundPosition: 'top 40px left -70px, bottom 30px left -57px, top -10px right -40px,bottom 10px right -40px'
+    backgroundPosition: 'top 50px left -90px, bottom 30px left -57px, top -30px right -60px, bottom 10px right -40px'
     // TODO let leafes overflow into page above
   }
 }));
