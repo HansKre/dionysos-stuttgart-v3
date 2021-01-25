@@ -2,6 +2,7 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints'
 
 const breakpoints = createBreakpoints({});
+// breakpoints.values.inbetween = 780;
 // outputs {xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920}
 
 // https://github.com/HansKre/vse-guard-ui/blob/master/src/styles/DarkTheme.js
@@ -85,7 +86,14 @@ const DionysosTheme = createMuiTheme({
         MuiButton: {
             // variant: 'contained',
         }
-    }
+    },
+    // https://material-ui.com/customization/breakpoints/#custom-breakpoints
+    breakpoints: {
+        values: {
+            ...breakpoints.values,
+            inbetween: 780
+        },
+    },
 });
 
 export default DionysosTheme;

@@ -38,7 +38,7 @@ export default function Header() {
 
     const theme = useTheme();
     const overSm = useMediaQuery(theme.breakpoints.up('sm'));
-    const over780 = useMediaQuery('@media (min-width:780px');
+    const overInbetween = useMediaQuery(theme.breakpoints.up('inbetween'));
     // outputs {xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920}
 
     return (
@@ -51,7 +51,7 @@ export default function Header() {
                         </Typography>
                     </Grid>
                     <Grid item xs={8} container justify='flex-end' >
-                        {over780 && <Grid item>
+                        {overInbetween && <Grid item>
                             <Button className={classes.menuButton}>
                                 <Typography color='textSecondary' variant="h6" className={classes.grow}>
                                     <HashLink smooth to="/#openingtimes" className={classes.inheritFromTypo}>Öffnungszeiten</HashLink>
