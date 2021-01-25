@@ -36,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(5)
   },
   background: {
+    display: 'flex',
+    flexDirection: 'column',
     backgroundImage: `url(${leaf1}), url(${leaf2}), url(${leaf3}), url(${leaf4})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '200px 200px',
