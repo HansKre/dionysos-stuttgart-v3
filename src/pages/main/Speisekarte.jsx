@@ -41,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${leaf1}), url(${leaf2}), url(${leaf3}), url(${leaf4})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '200px 200px',
-    backgroundPosition: 'top 40px left -70px, bottom 200px left -57px, top -10px right -40px,bottom 10px right -40px'
+    backgroundPosition: 'top 40px left -70px, bottom 200px left -57px, top -10px right -40px, bottom 10px right -40px',
+    [theme.breakpoints.down('xs')]: {
+      backgroundPosition: 'top 60px left -80px, bottom 200px left -57px, top -30px right -90px, bottom 150px right -40px',
+    },
     // TODO let leafes overflow into page above
   },
   flexColumn: {
