@@ -59,7 +59,7 @@ export default function Header() {
                         <Grid item>
                             <Button className={classes.menuButton}>
                                 <Typography color='secondary' variant="h6" className={classes.title}>
-                                    <HashLink smooth to="/#speisekarte" className={classes.inheritFromTypo}>MENU</HashLink>
+                                    <HashLink smooth to="/#speisekarte" className={classes.inheritFromTypo}>MENÜ</HashLink>
                                 </Typography>
                             </Button>
                         </Grid>

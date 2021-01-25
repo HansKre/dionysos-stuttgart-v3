@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: theme.spacing(3),
-        marginBottom: theme.spacing(1),
+        marginBottom: theme.spacing(7),
     },
     flexChild: {
         marginRight: theme.spacing(1),
