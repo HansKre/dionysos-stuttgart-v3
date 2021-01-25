@@ -12,9 +12,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         minHeight: '250px',
+        // creates a max-width media query that targets screen sizes up to and including the given breakpoint
         [theme.breakpoints.down('xs')]: {
             width: '100vw' /* fill 100% of screen width */
         },
+        // Creates a min-width media query that targets screen sizes greater than or equal to the given breakpoint.
         [theme.breakpoints.up('sm')]: {
             width: '80vw', /* fill 80% of screen width */
         },

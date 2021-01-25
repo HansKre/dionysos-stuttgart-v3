@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     menuButton: {
         marginRight: theme.spacing(2),
     },
-    title: {
+    grow: {
         flexGrow: 1,
     },
     inheritFromTypo: {
@@ -37,29 +37,29 @@ export default function Header() {
             <Toolbar>
                 <Grid container >
                     <Grid item xs={4}>
-                        <Typography color='textSecondary' variant="h4" className={classes.title}>
+                        <Typography color='textSecondary' variant="h4" className={classes.grow}>
                             DIONYSOS
                         </Typography>
                     </Grid>
                     <Grid item xs={8} container justify='flex-end' >
                         <Grid item>
                             <Button className={classes.menuButton}>
-                                <Typography color='textSecondary' variant="h6" className={classes.title}>
+                                <Typography color='textSecondary' variant="h6" className={classes.grow}>
                                     <HashLink smooth to="/#openingtimes" className={classes.inheritFromTypo}>Öffnungszeiten</HashLink>
                                 </Typography>
                             </Button>
                         </Grid>
                         <Grid item>
                             <Button className={classes.menuButton}>
-                                <Typography color='textSecondary' variant="h6" className={classes.title}>
+                                <Typography color='textSecondary' variant="h6" className={classes.grow}>
                                     <HashLink smooth to="/#anfahrt" className={classes.inheritFromTypo}>Anfahrt</HashLink>
                                 </Typography>
                             </Button>
                         </Grid>
                         <Grid item>
                             <Button className={classes.menuButton}>
-                                <Typography color='secondary' variant="h6" className={classes.title}>
-                                    <HashLink smooth to="/#speisekarte" className={classes.inheritFromTypo}>MENÜ</HashLink>
+                                <Typography color='secondary' variant="h6" className={classes.grow}>
+                                    <HashLink smooth to="/#speisekarte" className={classes.inheritFromTypo}>Speisekarte</HashLink>
                                 </Typography>
                             </Button>
                         </Grid>

@@ -14,16 +14,18 @@ const useStyles = makeStyles((theme) => ({
         padding: '7%'
     },
     button: {
-        marginTop: '40px'
+        marginTop: '40px',
     }
 }));
 
 const ColorButton = withStyles((theme) => ({
     root: {
         color: theme.palette.getContrastText('#4B8936'),
-        backgroundColor: '#4B8936',
+        // backgroundColor: '#4B8936',
+        backgroundColor: theme.palette.primary.light,
         '&:hover': {
-            backgroundColor: '#447c32',
+            // backgroundColor: '#447c32',
+            backgroundColor: theme.palette.primary.main,
         },
     },
 }))(Button);
@@ -36,10 +38,12 @@ export default function LandingPage() {
         <Grid id='top' container justify='center' alignItems='center' className={classes.grow} >
             <Paper className={classes.paper} elevation={0} >
                 <Grid item container direction='column' justify='center' alignItems='center' className={classes.grow} >
-                    <Typography color='primary' variant='h6'>Restaurant</Typography>
+                    <Typography color='primary' variant='h5'>Restaurant</Typography>
                     <Typography color='primary' variant='h1'>DIONYSOS</Typography>
-                    <Typography color='primary' variant='h6'>Griechische Spezialitäten</Typography>
-                    <ColorButton variant='contained' className={classes.button} onClick={() => alert('Coming soon...')} >Online bestellen</ColorButton>
+                    <Typography color='primary' variant='h5'>Griechische Spezialitäten</Typography>
+                    <ColorButton variant='contained' className={classes.button} onClick={() => alert('Coming soon...')} >
+                        <Typography color='textSecondary' variant="h6">Online bestellen</Typography>
+                    </ColorButton>
                 </Grid>
             </Paper>
         </Grid>

@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function MediaCard({ header, message }) {
+export default function AnfahrtCard({ header, message }) {
     const classes = useStyles();
 
     return (
@@ -63,7 +63,7 @@ export default function MediaCard({ header, message }) {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Route berechnen
+                        <Typography color='textSecondary' variant="h6">Route berechnen</Typography>
                     </Button>
                 </CardContent>
             </div>
