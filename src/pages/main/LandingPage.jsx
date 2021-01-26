@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
 
 const ColorButton = withStyles((theme) => ({
     root: {
-        color: theme.palette.getContrastText('#4B8936'),
-        backgroundColor: theme.palette.primary.light,
+        color: theme.palette.getContrastText(theme.palette.primary.main),
+        backgroundColor: theme.palette.primary.main,
         '&:hover': {
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.primary.light,
         },
         padding: theme.spacing(2)
     },
