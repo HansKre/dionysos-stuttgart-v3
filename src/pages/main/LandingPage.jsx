@@ -1,9 +1,9 @@
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
-import { makeStyles, withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
+import ColorButton from '../../components/ColorButton';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -14,27 +14,10 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '50%',
         padding: '7%'
     },
-    button: {
+    marginTop: {
         marginTop: '40px',
     },
-    biggerFont: {
-        fontSize: "2rem",
-        [theme.breakpoints.up('xs')]: {
-            fontSize: "1.6rem"
-        }
-    },
 }));
-
-const ColorButton = withStyles((theme) => ({
-    root: {
-        color: theme.palette.getContrastText(theme.palette.primary.main),
-        backgroundColor: theme.palette.primary.main,
-        '&:hover': {
-            backgroundColor: theme.palette.primary.light,
-        },
-        padding: theme.spacing(2)
-    },
-}))(Button);
 
 export default function LandingPage() {
 
@@ -47,8 +30,12 @@ export default function LandingPage() {
                     <Typography color='primary' variant='h5'>Restaurant</Typography>
                     <Typography color='primary' variant='h1'>DIONYSOS</Typography>
                     <Typography color='primary' variant='h5'>Griechische Spezialitäten</Typography>
-                    <ColorButton startIcon={<PhoneEnabledIcon style={{ fontSize: '2rem' }} />} href="tel:+49711841722" className={classes.button} >
-                        <Typography className={classes.biggerFont} color='textSecondary' variant="h6">0711 / 84 17 22</Typography>
+                    <ColorButton
+                        withIcon={<PhoneEnabledIcon />}
+                        href="tel:+49711841722"
+                        className={classes.marginTop}
+                    >
+                        0711 / 84 17 22
                     </ColorButton>
                 </Grid>
             </Paper>
