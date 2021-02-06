@@ -30,20 +30,6 @@ Pushing to ```master``` triggers a new build and when build is successful it get
 git push origin master
 ```
 
-## Backlog & Todos
-
-1. Add tests
-2. Refactor in own components
-   1. Olives Background is used by multiple components: use the ```render props``` pattern
-      1. MediaCard
-      2. Anfahrt
-      3. CurrentInfo
-      4. OpeningTimes
-      5. Speisekarte
-      6. Impressum
-      7. AnfahrtCard
-3. MealCategory uses old plain html
-
 ## Noteable ```material-ui``` knowledge
 
 ### Difference between ```className``` and ```classes```
@@ -163,3 +149,19 @@ const DionysosTheme = createMuiTheme({
 
 export default DionysosTheme;
 ```
+
+## Backlog & Todos
+
+1. Add tests
+2. Refactor in own components
+   1. Olives Background is used by multiple components: use the ```render props``` pattern
+      1. MediaCard
+      2. Anfahrt
+      3. CurrentInfo
+      4. OpeningTimes
+      5. Speisekarte
+      6. Impressum
+      7. AnfahrtCard
+3. MealCategory uses old plain html
+4. Connect headless-CMS (Sanity.io or NetlifyCMS)
+5. Add Markup support
