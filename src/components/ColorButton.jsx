@@ -1,4 +1,3 @@
-// import React from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
@@ -60,6 +59,17 @@ export default function ColorButton(props) {
         // option 3: let it inherit font settings.
         // let iconWithFontSize = React.cloneElement(withIcon, { fontSize: 'inherit' });
         // startIcon = iconWithFontSize;
+
+        /*
+        The reason why all of the above methods don't work but
+        setting the fontSize on the button directly does:
+
+        when the Button is created, the fontSize is set through
+        the fontSizeLarge class. This class seems to be appliead last
+        so it has the highest specificy and takes precedes over
+        all previous settings. While when user sets <Button styles={{fontSize={12}}}/>
+        it is the last setting.
+        */
     }
 
     return (
