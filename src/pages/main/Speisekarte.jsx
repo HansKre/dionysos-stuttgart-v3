@@ -65,17 +65,26 @@ const Speisekarte = () => {
   const classes = useStyles();
 
   const [mealCategories, setMealCategories] = React.useState();
+  const [menuOrder, setMenuOrder] = React.useState();
 
   const fetchMealCategories = React.useCallback(async () => {
-    const query = `*[_type == "category"] {
-      _id,
-      category,
-      categoryDetails,
-      categoryMeals
-    }`;
+    const query = `
+      *[_type == "menuOrder"][0] {
+        menuOrder[]->{
+          _id
+        },
+        "mealCategories": *[_type == "category"]{
+          _id,
+          category,
+          categoryDetails,
+          categoryMeals,
+        }
+      }
+    `;
     try {
-      const mealCategories = await sanityClient.fetch(query, {});
-      setMealCategories(mealCategories);
+      const result = await sanityClient.fetch(query, {});
+      setMealCategories(result.mealCategories);
+      setMenuOrder(result.menuOrder);
     } catch (error) {
       errorHandler(error)
     }
@@ -84,8 +93,18 @@ const Speisekarte = () => {
   React.useEffect(fetchMealCategories, [fetchMealCategories])
 
   const mealCategoriesJsx = () => {
-    if (mealCategories) {
-      return mealCategories.map((mealCategory, index) => {
+    if (menuOrder && mealCategories) {
+      // sort
+      const orderedMealCategories = [];
+      menuOrder.forEach(menuCategory => {
+        const result = mealCategories.find(category => category._id === menuCategory._id);
+        if (result) orderedMealCategories.push(result)
+      });
+      // add missing categories
+      const missingCategories = mealCategories.filter(category => !orderedMealCategories.find(orderedCategory => orderedCategory._id === category._id));
+      orderedMealCategories.push(...missingCategories);
+      // map
+      return orderedMealCategories.map((mealCategory, index) => {
         return (
           <Accordion key={mealCategory._id} >
             <AccordionSummary

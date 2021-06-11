@@ -40,10 +40,10 @@ const MealCategory = ({ mealCategory }) => {
             mealCategory.categoryMeals.map(meal => {
               return (
                 <tr key={meal._key} style={tableStyles}>
-                  <td className='meal' key={meal._key}>
+                  <td className='meal' key={`${meal._key}-1`}>
                     <BlockContent blocks={meal.meal} serializers={serializers} />
                   </td>
-                  <td className='price' key={meal._key}>{parseFloat(meal.price).toString().replace('.', ',').concat('0')}</td>
+                  <td className='price' key={`${meal._key}-2`}>{parseFloat(meal.price).toString().replace('.', ',').concat('0')}</td>
                 </tr>
               );
             })
