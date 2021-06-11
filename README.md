@@ -150,6 +150,20 @@ const DionysosTheme = createMuiTheme({
 export default DionysosTheme;
 ```
 
+## Thoughts about `npm` vulnerabilities audit and `react-scripts`
+
+### Problem
+
+- output of `npm audit` is very polluted due to the high number of vulnerabilities of `react-scripts`. This clogs the view on other packages
+- running `npm audit fix --force` unfortunately does not solve the issue
+
+### Possible Solution
+
+- idea: can we make `react-scripts` a `devDependency` where it does not affect the security of our app?
+- if yes, we can run `yarn audit --groups "dependencies"` and `yarn audit --groups "devDependencies"` separately to see what's really going on
+
+//TODO `react-scripts` check, if this can be a `devDependency` instead
+
 ## Backlog & Todos
 
 1. Add tests
