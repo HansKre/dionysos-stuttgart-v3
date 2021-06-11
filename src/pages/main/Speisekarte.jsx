@@ -88,7 +88,7 @@ const Speisekarte = () => {
     }
   }, [])
 
-  React.useEffect(fetchMealCategories, [fetchMealCategories])
+  React.useEffect(fetchMealCategories, [fetchMealCategories]);
 
   const mealCategoriesJsx = () => {
     if (data?.menuOrder && data?.mealCategories) {
