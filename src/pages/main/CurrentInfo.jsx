@@ -1,15 +1,16 @@
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import MediaCard from '../../components/MediaCard';
 import { nanoid } from 'nanoid';
+import sanityClient from '../../utils/sanityClient';
+import errorHandler from '../../utils/errorHandler';
 
 import leaf1 from '../../img/leaf1.png';
 import leaf2 from '../../img/leaf2.png';
 import leaf3 from '../../img/leaf3.png';
 import leaf4 from '../../img/leaf4.png';
-
-import { data } from '../../data/currentInfo';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -32,10 +33,45 @@ const CurrentInfo = () => {
 
   const classes = useStyles();
 
+  const [data, setData] = React.useState();
+
+  const fetchCurrentInfo = React.useCallback(async () => {
+    const query = `
+      *[_type == "currentInfo"]{
+        _id,
+        header,
+        date,
+        message
+      }
+    `;
+    try {
+      const result = await sanityClient.fetch(query, {});
+      setData(result)
+    } catch (error) {
+      errorHandler(error)
+    }
+  }, []);
+
+  React.useEffect(fetchCurrentInfo, [fetchCurrentInfo]);
+
+  const compareFn = (a, b) => {
+    if (a?.date && b?.date) {
+      if (a.date < b.date) {
+        return 1;
+      }
+      if (a.date > b.date) {
+        return -1;
+      }
+      return 0; // equal
+    }
+    return 1;
+  }
+
   return (
     <Grid id='currentinfo' className={classes.background} container alignItems='center' justify='center'>
       <Typography color='textPrimary' variant='h3' className={classes.title}>Aktuelle Informatioinen</Typography>
-      {data && data.map((entry, index) => {
+      {/* map in reversed order to show newest info first */}
+      {data && data?.sort(compareFn).map((entry, index) => {
         const isOdd = index % 2 !== 0;
         return (
           <MediaCard key={nanoid()} {...entry} index={index} imgFirst={isOdd} />
