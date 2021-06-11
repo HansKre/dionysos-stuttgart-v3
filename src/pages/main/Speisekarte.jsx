@@ -17,8 +17,6 @@ import leaf2 from '../../img/leaf2.png';
 import leaf3 from '../../img/leaf3.png';
 import leaf4 from '../../img/leaf4.png';
 
-import { data } from '../../data/speisekarte';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('xs')]: {
@@ -64,12 +62,13 @@ const Speisekarte = () => {
 
   const classes = useStyles();
 
-  const [mealCategories, setMealCategories] = React.useState();
-  const [menuOrder, setMenuOrder] = React.useState();
+  const [data, setData] = React.useState();
 
   const fetchMealCategories = React.useCallback(async () => {
     const query = `
       *[_type == "menuOrder"][0] {
+        allergene,
+        zusatzstoffe,
         menuOrder[]->{
           _id
         },
@@ -83,8 +82,7 @@ const Speisekarte = () => {
     `;
     try {
       const result = await sanityClient.fetch(query, {});
-      setMealCategories(result.mealCategories);
-      setMenuOrder(result.menuOrder);
+      setData(result)
     } catch (error) {
       errorHandler(error)
     }
@@ -93,7 +91,8 @@ const Speisekarte = () => {
   React.useEffect(fetchMealCategories, [fetchMealCategories])
 
   const mealCategoriesJsx = () => {
-    if (menuOrder && mealCategories) {
+    if (data?.menuOrder && data?.mealCategories) {
+      const { menuOrder, mealCategories } = data;
       // sort
       const orderedMealCategories = [];
       menuOrder.forEach(menuCategory => {
@@ -131,6 +130,7 @@ const Speisekarte = () => {
   }
 
   const zusatzStoffeUAllergeneJsx = () => {
+    const { zusatzstoffe, allergene } = data || {};
     return (
       <Accordion key={nanoid()} >
         <AccordionSummary
@@ -144,7 +144,7 @@ const Speisekarte = () => {
           <Typography>
             <h4>Zusatzstoffe</h4>
             <ol>
-              {data && data.zusatzstoffe && data.zusatzstoffe.map((entry, index) => {
+              {zusatzstoffe && zusatzstoffe.map((entry, index) => {
                 return (
                   <li key={index}>{entry}</li>
                 );
@@ -152,7 +152,7 @@ const Speisekarte = () => {
             </ol>
             <h4>Allergene</h4>
             <ol type='a'>
-              {data && data.allergene && data.allergene.map((entry, index) => {
+              {allergene && allergene.map((entry, index) => {
                 return (
                   <li key={index}>{entry}</li>
                 );
