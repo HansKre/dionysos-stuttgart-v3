@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import { nanoid } from 'nanoid';
+import sanityClient from '../../utils/sanityClient';
+import errorHandler from '../../utils/errorHandler';
 
 import MealCategory from './speisekarte/MealCategory';
 
@@ -62,11 +64,30 @@ const Speisekarte = () => {
 
   const classes = useStyles();
 
-  const fillMealCategories = () => {
-    if (data && data.categories) {
-      const mappedJSX = data.categories.map((mealCategory, index) => {
+  const [mealCategories, setMealCategories] = React.useState();
+
+  const fetchMealCategories = React.useCallback(async () => {
+    const query = `*[_type == "category"] {
+      _id,
+      category,
+      categoryDetails,
+      categoryMeals
+    }`;
+    try {
+      const mealCategories = await sanityClient.fetch(query, {});
+      setMealCategories(mealCategories);
+    } catch (error) {
+      errorHandler(error)
+    }
+  }, [])
+
+  React.useEffect(fetchMealCategories, [fetchMealCategories])
+
+  const mealCategoriesJsx = () => {
+    if (mealCategories) {
+      return mealCategories.map((mealCategory, index) => {
         return (
-          <Accordion key={nanoid()} >
+          <Accordion key={mealCategory._id} >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls={`panel${index}a-content`}
@@ -85,13 +106,12 @@ const Speisekarte = () => {
           </Accordion>
         )
       })
-      return mappedJSX;
     } else {
       return <br />
     }
   }
 
-  const fillZusatzStoffeUAllergene = () => {
+  const zusatzStoffeUAllergeneJsx = () => {
     return (
       <Accordion key={nanoid()} >
         <AccordionSummary
@@ -124,13 +144,13 @@ const Speisekarte = () => {
       </Accordion>
     )
   }
+
   return (
     <Grid id='speisekarte' className={classes.background} container alignItems='center' justify='center'>
       <Typography color='textPrimary' variant='h3' className={classes.title}>Unsere Speisekarte</Typography>
-
       <div className={classes.root}>
-        {fillMealCategories()}
-        {fillZusatzStoffeUAllergene()}
+        {mealCategoriesJsx()}
+        {zusatzStoffeUAllergeneJsx()}
       </div>
     </Grid>
   );
