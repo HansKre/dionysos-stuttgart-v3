@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import BlockContent from '@sanity/block-content-to-react';
 
 import img0 from '../img/jeroen-den-otter-HlxuCe2pkJU-unsplash.jpg';
 import img1 from '../img/clark-van-der-beken-POUMjDlf9GM-unsplash.jpg';
@@ -69,8 +70,9 @@ export default function MediaCard({ header, date, message, index, imgFirst }) {
                     </Typography>
                     <Typography variant="subtitle2" color="textPrimary"
                         className={classes.message}
-                        dangerouslySetInnerHTML={{ __html: message }}
-                    ></Typography>
+                    >
+                        <BlockContent blocks={message} />
+                    </Typography>
                 </CardContent>
             </div>
             {!imgFirst && theImg()}
